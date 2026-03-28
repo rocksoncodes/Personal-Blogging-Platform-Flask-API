@@ -1,8 +1,7 @@
 
-# 📰 Flask Articles API
+# Flask Articles API
 
-This is a simple **Flask + SQLAlchemy** CRUD API for managing articles.  
-It provides endpoints to create, read, update, and delete articles from a database.
+A Flask REST API for managing blog articles. Built as a foundational project to establish clean API structure habits, blueprints for organisation, environment-based database config and straightforward CRUD endpoints for titles, authors and categories.
 
 
 ## Features
