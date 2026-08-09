@@ -39,6 +39,5 @@
     "rate-limit-redis": "^6.0.0",
     "winston": "^3.19.0"
   },
-  "description": "An express API gateway that consumes multiple public APIs and exposes unified endpoints for various client uses.",
-  "private": null
+  "description": "An express API gateway that consumes multiple public APIs and exposes unified endpoints for various client uses."
 }
