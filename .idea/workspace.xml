@@ -7,104 +7,8 @@
     <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc566d2-2c95-414f-b158-2e7972a2cbbd" name="Changes" comment="chore: format code">
-      <change afterPath="$PROJECT_DIR$/dux-backend/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dux-backend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Universal-API-Gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/.idea/dux-api-gateway.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/.prettierignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Architecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/docs/Architecture.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Routes.md" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/docs/Routes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/prisma.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20260725172118_init/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/prisma/migrations/20260725172118_init/migration.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/prisma/migrations/migration_lock.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cache/cache.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/cache/cache.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cache/cache.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/cache/cache.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cache/redis.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/cache/redis.client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/db/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/db/prisma.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/http/clients/axios.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/http/clients/axios.client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/http/handlers/response.handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/http/handlers/response.handler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/http/request.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/http/request.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/index.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/index.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/infrastructure/http.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/infrastructure/http.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/infrastructure/logger.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/infrastructure/logger.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/infrastructure/response.handler.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/infrastructure/response.handler.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/modules/agro.module.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/modules/agro.module.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/modules/auth.module.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/modules/auth.module.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/modules/aviation.module.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/modules/aviation.module.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/modules/currency.module.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/modules/currency.module.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/modules/holiday.module.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/modules/holiday.module.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/modules/news.module.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/modules/news.module.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/modules/sports.module.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/modules/sports.module.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/modules/weather.module.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/modules/weather.module.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/system/logger.system.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/system/logger.system.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/system/redis.system.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/system/redis.system.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/interfaces/system/server.system.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/interfaces/system/server.system.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/logger/logger.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/logger/logger.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/logger/winston.logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/logger/winston.logger.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/middleware/middleware.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/middleware/middleware.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/middleware/middleware.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/middleware/middleware.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/middleware/middleware.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/app/middleware/middleware.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/bootstrap.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/bootstrap/bootstrap.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/bootstrap.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/bootstrap/bootstrap.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/envs/module.envs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/bootstrap/envs/module.envs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/envs/system.envs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/bootstrap/envs/system.envs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/providers/infisical.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/bootstrap/providers/infisical.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/agriculture/agro.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/agriculture/agro.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/agriculture/agro.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/agriculture/agro.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/agriculture/agro.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/agriculture/agro.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/agriculture/agro.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/agriculture/agro.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/agriculture/argo.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/agriculture/argo.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/auth/auth.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/auth/auth.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/auth/auth.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/auth/auth.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/auth/auth.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/auth/auth.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/aviation/aviation.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/aviation/aviation.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/aviation/aviation.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/aviation/aviation.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/aviation/aviation.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/aviation/aviation.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/aviation/aviation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/aviation/aviation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/aviation/aviation.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/aviation/aviation.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/controllers.registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/controllers.registry.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/currency/currency.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/currency/currency.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/currency/currency.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/currency/currency.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/currency/currency.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/currency/currency.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/currency/currency.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/currency/currency.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/currency/currency.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/currency/currency.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/holidays/holiday.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/holidays/holiday.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/holidays/holiday.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/holidays/holiday.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/holidays/holiday.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/holidays/holiday.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/holidays/holiday.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/holidays/holiday.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/holidays/holiday.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/holidays/holiday.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/news/news.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/news/news.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/news/news.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/news/news.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/news/news.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/news/news.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/news/news.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/news/news.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/news/news.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/news/news.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/routes.registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/routes.registry.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/sports/sports.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/sports/sports.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/sports/sports.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/sports/sports.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/sports/sports.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/sports/sports.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/sports/sports.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/sports/sports.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/sports/sports.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/sports/sports.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/weather/weather.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/weather/weather.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/weather/weather.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/weather/weather.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/weather/weather.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/weather/weather.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/weather/weather.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/weather/weather.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/weather/weather.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/modules/weather/weather.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dux-backend/yarn.lock" afterDir="false" />
+    <list default="true" id="cdc566d2-2c95-414f-b158-2e7972a2cbbd" name="Changes" comment="chore: setup frontend">
+      <change afterPath="$PROJECT_DIR$/dux-backend/.idea/modules.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,12 +43,12 @@
     &quot;assignee&quot;: &quot;michaelrockson&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/michaelrockson/Universal-API-Gateway.git&quot;,
-    &quot;accountId&quot;: &quot;c0e4eb39-b98c-4552-acc9-984359df91d8&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/michaelrockson/dux-api-gateway.git",
+    "accountId": "c0e4eb39-b98c-4552-acc9-984359df91d8"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7,
   &quot;fromUser&quot;: true
@@ -289,7 +193,7 @@
       <workItem from="1784978850589" duration="7038000" />
       <workItem from="1784998932417" duration="3742000" />
       <workItem from="1785015576814" duration="99000" />
-      <workItem from="1786235187203" duration="4692000" />
+      <workItem from="1786235187203" duration="5050000" />
     </task>
     <task id="LOCAL-00001" summary="chore: clean up">
       <option name="closed" value="true" />
@@ -467,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785001962882</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="chore: setup frontend">
+      <option name="closed" value="true" />
+      <created>1786240090042</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1786240090042</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,6 +417,7 @@
     <MESSAGE value="feat: add prisma" />
     <MESSAGE value="chore: update docs" />
     <MESSAGE value="chore: format code" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: format code" />
+    <MESSAGE value="chore: setup frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: setup frontend" />
   </component>
 </project>
