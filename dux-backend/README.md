@@ -1,34 +1,19 @@
-# Dux-API-Gateway
+# Universal API Gateway 
 
-A single, versioned gateway for public services weather, news, currency, public holidays, sports, aviation and agriculture built on Express 5 and TypeScript with a React/Vite frontend that demos the aggregated modules.
-
-## Overview
-
-This repo has two parts:
-
-- **`/` (backend)** the Express/TypeScript API gateway. Aggregates seven public APIs behind a single interface mounted at `/v1` with API key auth, rate limiting and Infisical-managed secrets.
-
-- **`/frontend`** a React + Vite app that showcases the gateway's modules with a simple, demo-oriented UI. It's not a full dashboard no auth flows or key management, just a working front-end client hitting the live endpoints.
+An API gateway for public services built on Express 5 and TypeScript. The gateway aggregates seven public APIs weather, news, currency, public holidays, sports, aviation, and agriculture behind a single, versioned interface mounted at `/v1`. Secrets and runtime configuration are managed via [Infisical](https://infisical.com/) no API keys are stored locally beyond the five credentials needed to bootstrap the Infisical connection.
 
 ## Features
-
-### Backend
 
 - Express 5 server written in TypeScript (ESM, `"type": "module"`)
 - Versioned API routes under `/v1`
 - Layered architecture: `AxiosHttpClient` → service → controller → router, with constructor-injected dependencies
 - Config split into two typed objects: `SystemConfig` (server/logger settings) and `ModuleConfig` (per-module API keys and URLs)
-- Secrets management via Infisical SDK — zero secrets in source control
-- API Key authentication and rate limiting (100 req/15 min) via gateway middleware
+- Secrets management via Infisical SDK zero secrets in source control
+- Shared `AxiosHttpClient` and `ControllerResponseHandler` used across all modules
+- API Key authentication and Rate Limiting (100 req/15 min) via Gateway Middleware
 - PostgreSQL database integration via Prisma for securely hashing and storing API keys
 - Structured JSON logging via Winston, with Morgan piped through it
 - Eight fully implemented modules: **Auth**, **Weather**, **News**, **Currency**, **Public Holidays**, **Sports**, **Aviation**, **Agriculture**
-
-### Frontend
-
-- Built with React + Vite
-- Demo/showcase UI for exercising the gateway's modules a lightweight way to see the API responses without Postman (To be developed)
-- Talks to the backend over the same `/v1` routes documented below (To be developed)
 
 ## External APIs
 
@@ -49,25 +34,22 @@ Each integration follows the same modular provider / service / controller / rout
 - Node.js 20+
 - yarn
 - PostgreSQL database
-- An [Infisical](https://infisical.com/) project containing the runtime secrets listed in [Setup](#setup)
+- An [Infisical](https://infisical.com/) project containing the runtime secrets listed in the [Setup](#setup) section
 
 ## Setup
 
-### 1. Clone the repository
-
+**1. Clone the repository:**
 ```bash
-git clone https://github.com/michaelrockson/dux-api-gateway.git
-cd dux-api-gateway
+git clone https://github.com/michaelrockson/Universal-API-Gateway.git
+cd Universal-API-Gateway
 ```
 
-### 2. Backend
-
-**Install dependencies:**
+**2. Install dependencies:**
 ```bash
 yarn install
 ```
 
-**Create a `.env` file in the project root** with your Infisical bootstrap credentials:
+**3. Create a `.env` file in the project root** with your Infisical bootstrap credentials:
 ```env
 INFISICAL_SITE_URL=https://app.infisical.com
 INFISICAL_CLIENT_ID=<your-client-id>
@@ -78,9 +60,9 @@ INFISICAL_PROJECT_ID=<your-project-id>
 
 These five values are the only secrets that live locally. Everything else is fetched from Infisical at startup.
 
-> **Note for local DB setup:** To run Prisma CLI commands locally (like `prisma migrate dev`), also add `DATABASE_URL` to your `.env`. The runtime server itself fetches `DATABASE_URL` from Infisical.
+> **Note for Local DB Setup:** To run Prisma CLI commands locally (like `prisma migrate dev`), you must also add your `DATABASE_URL` to the `.env` file. However, the runtime server will fetch `DATABASE_URL` securely from Infisical.
 
-**Add the following secrets to your Infisical project:**
+**4. Add the following secrets to your Infisical project:**
 
 *System config:*
 ```
@@ -103,40 +85,27 @@ SPORTS_API_KEY
 AVIATION_API_URL
 AVIATION_API_KEY
 AGRO_API_URL
+AGRO_API_URL
 AGRO_API_KEY
-AGRO_POLYGON_ID
 DATABASE_URL
 ```
 
-See [Environment Variables](#environment-variables) for the purpose of each key.
+See the [Environment Variables](#environment-variables) section for the purpose of each key.
 
-**Initialize the database:**
+**5. Initialize Database:**
 ```bash
 yarn prisma migrate dev
 ```
 
-### 3. Frontend
-
-```bash
-cd frontend
-yarn install
-```
-
-Point the frontend at your running gateway instance add a `.env` (or `.env.local`) in `frontend/`:
-```env
-API_BASE_URL=http://localhost:3000/v1
-API_KEY=<a-key-issued-by-the-gateway>
-```
-
 ## Running Locally
 
-### Backend development
+### Development
 ```bash
 yarn dev
 ```
 Uses `tsx watch` for live reloading. The server listens on the port configured in Infisical (`PORT`), defaulting to `3000`.
 
-### Backend production build
+### Production Build
 ```bash
 yarn build
 yarn start
@@ -144,27 +113,13 @@ yarn start
 
 > **Important:** Always run the server from the **project root**, not from `src/`. The dotenv bootstrap resolves `.env` relative to `process.cwd()`. Running from a subdirectory will cause a `Missing required environment variable: INFISICAL_SITE_URL` error at startup.
 
-### Frontend development
-```bash
-cd frontend
-yarn dev
-```
-Runs the Vite dev server (defaults to `http://localhost:5173`). Make sure the backend is running first so API calls resolve.
-
-### Frontend production build
-```bash
-cd frontend
-yarn build
-```
-Outputs a static bundle to `frontend/dist`, which can be served by any static host or reverse-proxied alongside the API.
-
 ## API & Testing
 
 All endpoints are documented in **[docs/Routes.md](docs/Routes.md)**, including full parameter tables and ready-to-use Postman examples for every module.
 
 Base URL for local testing: `http://localhost:3000`
 
-> Except for `/v1/auth/gateway-key`, all routes require a valid API key passed via the `x-api-key` or `Authorization` (Bearer) header.
+> **Note:** Except for `/v1/auth/gateway-key`, all routes require a valid API key passed via the `x-api-key` or `Authorization` (Bearer) header.
 
 | Module | Base path |
 |---|---|
@@ -180,56 +135,51 @@ Base URL for local testing: `http://localhost:3000`
 ## Project Structure
 
 ```
-.
-├── frontend/                            # React + Vite demo UI
-│   ├── src/
-│   └── ...
+src/
+├── server.ts                            # Entry point — bootstrap and startup
 │
-└── src/                                  # Backend gateway
-    ├── server.ts                        # Entry point — bootstrap and startup
+├── modules/                             # Feature modules (one folder per domain)
+│   ├── controllers.registry.ts          # Calls all providers → assembles GatewayControllers
+│   ├── routes.registry.ts               # Mounts all module routers under /v1
+│   │
+│   ├── weather/
+│   │   ├── weather.provider.ts          # Factory: AxiosHttpClient → WeatherService → WeatherController
+│   │   ├── weather.service.ts           # Outbound calls to OpenWeatherMap
+│   │   ├── weather.controller.ts        # HTTP request handling for /v1/weather
+│   │   ├── weather.routes.ts            # Route definitions
+│   │   └── weather.types.ts             # Request param and response types
+│   │
+│   ├── auth/                            # API Key generation (Prisma)
+│   ├── news/                            # NewsAPI integration
+│   ├── currency/                        # Currencylayer integration
+│   ├── holidays/                        # Nager.Date integration
+│   ├── sports/                          # TheSportsDB integration
+│   ├── aviation/                        # Aviationstack integration
+│   └── agriculture/                     # Agromonitoringstack integration
+│
+├── bootstrap/                           # Startup configuration and injection
+│   ├── envs/                            # System and Module environment parsing
+│   ├── providers/                       # Infisical auth & secret injection
+│   ├── bootstrap.types.ts               # SharedDependencies, GatewayControllers, ModuleControllersProvider
+│   └── bootstrap.utils.ts               # bootGatewayControllers, getEnvVar, validateEnvs, etc.
+│
+└── app/                                 # Cross-cutting infrastructure
+    ├── db/
+    │   └── prisma.ts                    # PrismaClient factory
+    ├── http/
+    │   ├── clients/                     # AxiosHttpClient (implements IHttpClient)
+    │   ├── handlers/                    # ControllerResponseHandler (implements IResponseHandler)
+    │   └── request.utils.ts             # Error classes (e.g. BadRequestError), validation, and parsing
     │
-    ├── modules/                         # Feature modules (one folder per domain)
-    │   ├── controllers.registry.ts      # Calls all providers → assembles GatewayControllers
-    │   ├── routes.registry.ts           # Mounts all module routers under /v1
-    │   │
-    │   ├── weather/
-    │   │   ├── weather.provider.ts      # Factory: AxiosHttpClient → WeatherService → WeatherController
-    │   │   ├── weather.service.ts       # Outbound calls to OpenWeatherMap
-    │   │   ├── weather.controller.ts    # HTTP request handling for /v1/weather
-    │   │   ├── weather.routes.ts        # Route definitions
-    │   │   └── weather.types.ts         # Request param and response types
-    │   │
-    │   ├── auth/                        # API key generation (Prisma)
-    │   ├── news/                        # NewsAPI integration
-    │   ├── currency/                    # Currencylayer integration
-    │   ├── holidays/                    # Nager.Date integration
-    │   ├── sports/                      # TheSportsDB integration
-    │   ├── aviation/                    # Aviationstack integration
-    │   └── agriculture/                 # Agromonitoringstack integration
+    ├── middleware/                      # Rate limiting & Postgres-based Auth logic
     │
-    ├── bootstrap/                       # Startup configuration and injection
-    │   ├── envs/                        # System and module environment parsing
-    │   ├── providers/                   # Infisical auth & secret injection
-    │   ├── bootstrap.types.ts           # SharedDependencies, GatewayControllers, ModuleControllersProvider
-    │   └── bootstrap.utils.ts           # bootGatewayControllers, getEnvVar, validateEnvs, etc.
+    ├── interfaces/
+    │   ├── config/                      # Per-concern config interfaces (ISystemConfig, IModuleConfig, etc.)
+    │   └── infrastructure/              # IHttpClient, ILogger, IResponseHandler
     │
-    └── app/                             # Cross-cutting infrastructure
-        ├── db/
-        │   └── prisma.ts                # PrismaClient factory
-        ├── http/
-        │   ├── clients/                 # AxiosHttpClient (implements IHttpClient)
-        │   ├── handlers/                # ControllerResponseHandler (implements IResponseHandler)
-        │   └── request.utils.ts         # Error classes (e.g. BadRequestError), validation, and parsing
-        │
-        ├── middleware/                  # Rate limiting & Postgres-based auth logic
-        │
-        ├── interfaces/
-        │   ├── config/                  # Per-concern config interfaces (ISystemConfig, IModuleConfig, etc.)
-        │   └── infrastructure/          # IHttpClient, ILogger, IResponseHandler
-        │
-        └── logger/
-            ├── logger.utils.ts          # logProcess, logBootstrapStep, createMorganStream, consoleLogger
-            └── winston.logger.ts        # WinstonLogger (implements ILogger)
+    └── logger/
+        ├── logger.utils.ts              # logProcess, logBootstrapStep, createMorganStream, consoleLogger
+        └── winston.logger.ts            # WinstonLogger (implements ILogger)
 ```
 
 ## Architecture
@@ -245,18 +195,19 @@ The gateway uses a layered architecture with constructor-injected dependencies. 
 
 No service or controller is instantiated at module load time. All construction happens inside provider functions, which only run after the config objects are ready.
 
+See **[docs/Architecture.md](docs/Architecture.md)** for a full breakdown of the startup sequence, dependency flow, type system, and step-by-step instructions for adding a new module.
+
 ## Notes
 
 - All API keys and base URLs are stored in Infisical, not in `.env`.
-- The backend's `.env` file contains **only** the five Infisical bootstrap credentials.
+- The `.env` file contains **only** the five Infisical bootstrap credentials.
 - All modules share the same `AxiosHttpClient` and `ControllerResponseHandler` no module makes raw Axios calls or implements its own response formatting.
 - The Sports API key is embedded as a **path segment** (not a query param), so `SportsService` receives the key as a second constructor argument and builds the endpoint string itself.
 - When adding a new module, follow the 13-step guide in [docs/Architecture.md](docs/Architecture.md#14-adding-a-new-module).
-- The frontend is a demo layer, not a production dashboard it doesn't handle API key issuance/management on its own yet.
 
 ## Environment Variables
 
-### Backend local `.env` (bootstrap only)
+### Local `.env` (bootstrap only)
 
 | Variable | Purpose |
 |---|---|
@@ -266,7 +217,7 @@ No service or controller is instantiated at module load time. All construction h
 | `INFISICAL_ENVIRONMENT` | Target environment (`dev`, `staging`, `prod`) |
 | `INFISICAL_PROJECT_ID` | Infisical project to fetch secrets from |
 
-### Backend Infisical secrets (runtime)
+### Infisical secrets (runtime)
 
 **System config** controls server and logger behaviour:
 
@@ -294,13 +245,6 @@ No service or controller is instantiated at module load time. All construction h
 | `AGRO_API_URL` | Agromonitoringstack base URL |
 | `AGRO_API_KEY` | Agromonitoringstack API key |
 | `AGRO_POLYGON_ID` | Agromonitoringstack polygon ID |
-
-### Frontend `.env` / `.env.local`
-
-| Variable | Purpose |
-|---|---|
-| `API_BASE_URL` | Base URL of the gateway (e.g. `http://localhost:3000/v1`) |
-| `API_KEY` | API key used by the demo UI to authenticate requests |
 
 ## License
 

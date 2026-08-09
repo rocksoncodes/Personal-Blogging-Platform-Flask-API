@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Universal-API-Gateway.iml" filepath="$PROJECT_DIR$/.idea/Universal-API-Gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dux-backend/.idea/dux-api-gateway.iml" filepath="$PROJECT_DIR$/dux-backend/.idea/dux-api-gateway.iml" />
     </modules>
   </component>
 </project>
